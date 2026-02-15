@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – BTS SIO</title>
+
+    <!-- Police & CSS global -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icônes FontAwesome -->
+    <script src="https://kit.fontawesome.com/a2e0e6ad59.js" crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     SIDEBAR (fixe à gauche)
+========================================================= -->
+<div class="sidebar">
+    <h2 class="sidebar-title">Laureen RUELLE</h2>
+
+     <div class="sidebar-icons">
+    <a href="https://www.linkedin.com/feed/?trk=cold_join_sign_in">
+        <img src="linkedin.jpg" alt="LinkedIn">
+    </a>
+</div>
+    <ul class="sidebar-menu">
+        <li><a href="#apropos">A propos de moi</a></li>
+        <li><a href="#parcours">Parcours professionnel</a></li>
+        <li><a href="#bts">Présentation du BTS</a></li>
+        <li><a href="#entreprise">Entreprise</a></li>
+        <li><a href="#organigramme">Organigramme</a></li>
+        <li><a href="#schema">Schéma réseau</a></li>
+        <li><a href="#synthese">Tableau de synthèse</a></li>
+        <li><a href="#realisations">Mes réalisations professionnelles</a></li>
+        <li><a href="#ressentis">Mes ressentis</a></li>
+        <li><a href="#veille">Veille technologique</a></li>
+        <li><a href="#apres">Après le BTS</a></li>
+    </ul>
+
+</div>
+
+<!-- =======================================================
+     SECTION 1 – HERO (PAGE D’ACCUEIL)
+========================================================= -->
+<section class="hero" id="accueil">
+    <h1>Laureen RUELLE</h1>
+    <p>Étudiante en BTS SIO – Option SISR</p>
+    <p><b><span id="typed-text" class="typing"></span></b></p>
+</section>
+
+<script>
+/* Effet machine à écrire */
+const text = "Bienvenue sur mon Portfolio";
+let index = 0;
+let isDeleting = false;
+const speed = 90;
+const deleteSpeed = 50;
+const delayBetween = 1200;
+const target = document.getElementById("typed-text");
+
+function typeLoop() {
+    if (!isDeleting) {
+        target.textContent = text.substring(0, index++);
+        if (index > text.length) {
+            isDeleting = true;
+            setTimeout(typeLoop, delayBetween);
+            return;
+        }
+    } else {
+        target.textContent = text.substring(0, index--);
+        if (index < 0) {
+            isDeleting = false;
+            index = 0;
+        }
+    }
+    setTimeout(typeLoop, isDeleting ? deleteSpeed : speed);
+}
+window.onload = typeLoop;
+</script>
+
+<!-- =======================================================
+     SECTION 2 – A PROPOS
+========================================================= -->
+<section id="apropos" class="page-content">
+    <div class="center-block">
+        <div class="separator-fade"></div>
+        <h2 class="Titre2">A propos de moi</h2>
+        <p>
+           <br>
+           <br> 
+            En reconversion professionnelle, j'ai souhaité me reconvertir dans l'informatique...
+        </p>
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION 3 – PARCOURS PROFESSIONNEL (Timeline)
+========================================================= -->
+<section id="parcours" class="page-content">
+    <div class="center-block">
+        <div class="separator-fade"></div>
+        <h2 class="Titre2">Parcours professionnel</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item left">
+            <div class="content">
+                <span class="year">2024 – 2026</span>
+                <h3>BTS Services Informatiques aux Organisations option Solutions d'Infrastructures, Systèmes et Réseaux.</h3>
+                    <br>En Alternance </br>
+                   <a href="https://cros.com/" target="_blank" rel="noreferrer">
+                        <button class="boutons"> Site web de la société </button>
+                    <a href="https://www.mfr-stegreve.org/" target="_blank" rel="noreferrer">
+                        <button class="boutons"> Site web de la MFR </button>   
+                    </a> 
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="year">2018 – 2023</span>
+                <h3>Opératrice de production.</h3>
+                <p>Intérimaire avec Randstad de Seyssinet-Pariset.</p>
+            </div>
+        </div>
+
+              <div class="timeline-item left">
+            <div class="content">
+                <span class="year">2018</span>
+                <h3>Commerce</h3>
+                <p>    Vendeuse dans un magasin de charité (charity shop), stage avec Erasmus en Angleterre <br>
+                    <a href="https://www.scope.org.uk/charity-shops" target="_blank" rel="noreferrer">
+                        <button class="boutons"> Site web du magasin de charité</button>
+                    </a>
+                </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="year">2016 – 2017</span>
+                <h3>Restauration</h3>
+                <p>Contrats saisonniers en restauration et en centre de vacances.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+                <span class="year">2015 – 2016</span>
+                <h3>Baccalauréat Professionnel Commerce<br>CFP Les Charmilles à Saint Martin d'Hères</br></h3>
+                <p>Vente assistée en magasin prêt à porter pour homme en alternance</p>
+                <a href="https://les-charmilles.fr/cfp-les-charmilles/" target="_blank" rel="noreferrer">
+                        <button class="boutons"> Site web du CFP </button>
+                        </a>
+        </div>
+</section>
+
+<!-- =======================================================
+     SECTION 4 – PRÉSENTATION DU BTS (Flip Cards)
+========================================================= -->
+<section id="bts" class="page-content">
+    <div class="center-block">
+        <div class="separator-fade"></div>
+        <h2 class="Titre2">Présentation du BTS SIO</h2>
+
+    <div class="flip-container">
+<div class="stage-presentation">
+        <!-- SISR -->
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <h2>🖧 Option SISR</h2>
+                    <img src="images/datacenter.jpg">
+                </div>
+
+                <div class="flip-card-back">
+                    <h2>🖧 Option SISR</h2>
+                    <br>
+                    <br>
+                    <p>L'acronyme SISR signifie "Solutions d'Infrastrucutres Systèmes et Réseaux". L'option SISR est destinée aux étudiants qui s'orientent vers les métiers liés à la conception et la maintenance d'infrastrucutres réseaux.</p>
+                   <br> 
+                    <p>Assurer la sécurité, la mainteance et l'installation des réseaux et des équipements informatiques font partie des principales misssions des futurs administrateurs, techniciens ou pilotes d'exploitation.</p> 
+                    <br>
+                    Des cours plus généraux viendront compléter la formation et apporter des comptéences plus généralistes, permettant ainsi aux diplômés d'être opérationnels dans n'importe quelle entreprise. 
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SLAM -->
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+                    <h2>💻 Option SLAM</h2>
+                    <img src="images/developper.jpg">
+                </div>
+                <div class="flip-card-back">
+                    <h2>💻 Option SLAM</h2>
+                    <br>
+                    <br>
+                    <p>L'acronyme SLAM signifie "Solutions Logicielles et Applications Métiers". Voici quelques indications sur cette seconde option du BTS SIO ainsi des précisions sur cette formation et ses débouchés.</p> 
+                    <br>
+                    <p>L'option SLAM est destinée aux étudiants qui s'orientent vers les métiers liés à la conception et la maintenance de programmes applicatifs. </p>
+                    <br>
+                    <p>Grâce à des cours spécifiques, les diplômés seront capables de gérer un parc informatique ou d'admnistrer un réseau au sein d'une entreprise.</p>
+                    <br>
+                    <p>Ils pourront également diriger l'intégration, la sécurisation et la configuration des serveurs, mais aussi des postes clients et des équipements d'interconnexion.</p>
+                </div>
+
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION 5 – ENTREPRISE
+========================================================= -->
+<section id="entreprise" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Entreprise</h2>
+        	<h1 class="Titre">Entreprise</h1>
+				</div>
+						<p>Située dans l’agglomération grenobloise, CROS est une entreprise familiale reconnue comme spécialiste local pour la vente, la location et la maintenance d’équipements tels que les compresseurs d’air, les pompes à vide, les pompes et stations de relevage, les groupes électrogènes et les matériels de foration.
+						Les clients sont des entreprises industrielles, des entreprises du BTP ou encore des collectivités territoriales de l’arc alpin.</p>
+						<div class="stage-presentation">
+							<div class="data-card">
+								<h3>70</h3>
+								<h4>Collaborateurs</h4>
+								<h4>Répartis en 5 pôles d'activités</h4>
+								</p>
+                                </div>
+							<div class="data-card">
+								<h3>5 pôles</h3>
+								<h4>3 pôles d'activités</h4>
+								<h4>2 pôles transverses</h4>
+								<p>
+							    </div>
+							<div class="data-card">
+								<h3>17 Millions €</h3>
+								<h4>De chiffre d'affaire</h4>
+								<h5></h5>
+								<p>
+							</div>	
+                            </p>
+                            
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION 6 – ORGANIGRAMME
+========================================================= -->
+<section id="organigramme" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Organigramme</h2>
+        <br>
+        <br>
+    <img src="oganigramme.png" class="img-centree">
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION 7 – SCHÉMA RÉSEAU
+========================================================= -->
+<section id="schema" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Schéma réseau</h2>
+        <br>
+        <br>
+    <img src="images/plan_infrastructure_réseau_CROS.png" class="img-centree">
+        </div>
+</section>
+
+<!-- =======================================================
+     SECTION 8 – TABLEAU DE SYNTHESE
+========================================================= -->
+<section id="synthese" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Tableau de synthèse</h2>
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION – MES RÉALISATIONS PROFESSIONNELLES
+========================================================= -->
+<section id="realisations" class="page-content">
+
+    <div class="center-block">
+        <h2 class="Titre2">Mes réalisations professionnelles</h2>
+    </div>
+    <br>
+    <br>
+
+    <!-- ===================== PROJETS 1ÈRE ANNÉE ===================== -->
+     <div class="center-block">
+    <h2 class="Titre3">Projets de première année</h2>
+
+    <div class="stage-presentation">
+
+        <!-- PROJET 1 -->
+        <div class="data-card">
+            <h3>PROJET 1</h3>
+            <h4>Création de Check List</h4>
+            <h5>Sous DLRIX</h5>
+            <p></p>
+            <a href="_BTSSIO2_CDC_Projet1_Check List.pdf" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- PROJET 2 -->
+        <div class="data-card">
+            <h3>PROJET 2</h3>
+            <h4>Changement de NAS</h4>
+            <h5></h5>
+            <p></p>
+            <a href="#" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Tâches courantes -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Tâches courantes du service informatique & administration</h4>
+            <h5>Sous DLRIX</h5>
+            <p></p>
+            <a href="_BTSSIO2_CDC_Tâches courantes du service informatique et tâches d'administration.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Support utilisateurs -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Assurer le support aux utilisateurs</h4>
+            <h5></h5>
+            <p></p>
+            <a href="_BTSSIO2_CDC_Assurer le support aux utilisateurs.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – BAL partagée -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Ajout boîte aux lettres partagée</h4>
+            <h5></h5>
+            <p></p>
+            <a href="_BTSSIO2_CDC_Mission_ajout boîte aux lettres partagée.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Sauvegarde PC -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Sauvegarde PC du directeur</h4>
+            <h5></h5>
+            <p></p>
+            <a href="BTSSIO2_CDC_Mission_SauvergardePC_Directeur.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Installation goulottes -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Installation de goulottes</h4>
+            <h5></h5>
+            <p></p>
+            <a href="BTSSIO2_CDC_Mission_Installation_goulottes.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+    </div>
+
+
+    <!-- ===================== PROJETS 2ÈME ANNÉE ===================== -->
+     <div class="center-block">
+    <h2 class="Titre3">Projets de deuxième année</h2>
+    
+
+    <div class="stage-presentation">
+
+        <!-- PROJET 1 -->
+        <div class="data-card">
+            <h3>PROJET 1</h3>
+            <h4>Création Wi-Fi visiteur</h4>
+            <h5>Sous DLRIX</h5>
+            <p></p>
+            <a href="BTSSIO2_CDC_Projet1_Check List.pdf" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- PROJET 2 -->
+        <div class="data-card">
+            <h3>PROJET 2</h3>
+            <h4>À définir</h4>
+            <h5></h5>
+            <p></p>
+            <a href="#" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Infra réseau -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Modification infrastructure réseau</h4>
+            <h5>Sous DLRIX</h5>
+            <p></p>
+            <a href="CDC_Tâches courantes du service informatique et tâches d'administration.pdf"
+               class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Liste diffusion + AD -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>Liste de diffusion + création d’un répertoire AD avec droits</h4>
+            <h5></h5>
+            <p></p>
+            <a href="#" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Placeholder -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>A définir</h4>
+            <h5></h5>
+            <p></p>
+            <a href="#" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+        <!-- MISSION – Placeholder -->
+        <div class="data-card">
+            <h3>MISSION</h3>
+            <h4>A définir</h4>
+            <h5></h5>
+            <p></p>
+            <a href="#" class="bouton-rect" target="_blank">Voir la mission</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SECTION 10 – RESSENTIS
+========================================================= -->
+<section id="ressentis" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Mes ressentis</h2>
+    
+    <br>
+    <br>
+    <p>Au début de la formation cela n'a pas été facile au début sur le plan de la reprise d'études mais aussi la difficulté de l'informatique. 
+    <pr>Je me suis remise en question plusieurs fois et aussi le choix de la foramtion mais malgrés tout, le formation me plaisait j'aimais ce que je faisais et j'ai alors persévéré et aujourd'hui je ne regrette rien.</p>
+</div>
+    </section>
+
+<!-- =======================================================
+     SECTION 11 – VEILLE TECHNO
+========================================================= -->
+<section id="veille" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Veille technologique</h2>
+        <br>
+        <br>
+						<p>La veille informatique est une activité qui consiste à se tenir au courant des avancées technologiques dans le domaine de l'informatique afin de tirer parti de ses avancées le plus rapidement possible.</p>
+                        <br>
+                        <p>La veille informatique est utilisée afin de valider une décision déjà prise : Généralement, la veille est un moyen de collecter et traiter de l'information pour asseoir les initiatives prises par l'entreprise.</p> 
+						<div class="stage-presentation">
+							<div class="data-card">
+								<h3>Veille Techno 1</h3>
+								<h4></h4>
+								<h4></h4>
+								</p>
+                                </div>
+							<div class="data-card">
+								<h3>Veille Techno 2</h3>
+								<h4></h4>
+								<h4></h4>
+								<p>
+							    </div>
+							<div class="data-card">
+								<h3>Veille Techno 3</h3>
+								<h4></h4>
+								<h5></h5>
+								<p>
+							</div>	
+                            </p>
+                            
+    </div>
+</section>
+    </div>
+</section>
+
+<!-- =======================================================
+     SECTION 12 – APRES LE BTS
+========================================================= -->
+<section id="apres" class="page-content">
+    <div class="center-block">
+        <h2 class="Titre2">Après le BTS</h2>
+        <br>
+        <br>
+        <P>Après le BTS je souhaite ... </P>
+    </div>
+</section>
+
+<!-- =======================================================
+    SCROLLSPY (active le lien de la section visible)
+========================================================= -->
+<script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".sidebar-menu a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active-section");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active-section");
+        }
+    });
+});
+</script>
+<!-- ========================= FOOTER INFO ========================= -->
+<footer class="footer-info">
+
+    <div class="footer-column">
+        <h3>MENTION LÉGALE</h3>
+        <p>Vous pourrez retrouver ci-dessous la politique de confidentialité ainsi que le copyright.</p>
+    </div>
+
+    <div class="footer-column">
+        <h3>À PROPOS DE CE SITE</h3>
+        <p>Réalisation du site pour tester mes compétences acquises durant mes deux années de formations.</p>
+    </div>
+
+    <div class="footer-column">
+        <h3>RECHERCHER</h3>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Rechercher...">
+            <button id="searchBtn">RECHERCHER</button>
+        </div>
+    </div>
+
+</footer>
+
+<!-- ========== COPYRIGHT ========== -->
+<div class="footer-bottom">
+    <p><a href="#">Politique de confidentialité</a></p>
+    <p>Copyright © 2025 Laureen RUELLE</p>
+</div>
+<script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+    let query = document.getElementById("searchInput").value.toLowerCase();
+
+    if (query.trim() === "") {
+        alert("Veuillez entrer un mot.");
+        return;
+    }
+
+    let elements = document.querySelectorAll("section, article, div");
+
+    let found = false;
+
+    elements.forEach(el => {
+        if (el.innerText.toLowerCase().includes(query)) {
+            el.scrollIntoView({ behavior: "smooth" });
+            el.style.outline = "3px solid cyan";
+            found = true;
+        } else {
+            el.style.outline = "none";
+        }
+    });
+
+    if (!found) {
+        alert("Aucun résultat trouvé.");
+    }
+});
+</script>
+
+</body>
+</html>
