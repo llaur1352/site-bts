@@ -124,7 +124,7 @@ main {
 
 .hero {
     height: 100vh;
-    margin-left: var(--sidebar-width);
+    margin-left: 0;
     background-image: url("images/informatique.jpg");
     background-size: cover;
     background-position: center;
@@ -609,6 +609,7 @@ main {
 .footer-bottom a:hover {
     text-decoration: underline;
 }
+
 
 
 
