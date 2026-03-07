@@ -131,7 +131,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 80px;
+    padding-left: 300px;
     padding-right: 30px;
     color: rgb(255, 255, 255);
 }
@@ -754,4 +754,5 @@ main {
         padding: 25px 15px;
     }
 }
+
 
